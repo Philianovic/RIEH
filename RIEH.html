@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>RIEH - ETHICAL FINE JEWELRY</title>
+  <meta name="generator" content="Google Web Designer 9.0.2.0915">
+  <style type="text/css" id="gwd-text-style">
+    @font-face {
+      font-family: Novacento;
+      src: url("assets/NovecentoWideNormal.otf") format("opentype");
+    }
+    p {
+      margin: 0px;
+    }
+    h1 {
+      margin: 0px;
+    }
+    h2 {
+      margin: 0px;
+    }
+    h3 {
+      margin: 0px;
+    }
+  </style>
+  <style type="text/css">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    body {
+      transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      transform-style: preserve-3d;
+      background-image: none;
+      background-color: rgb(192, 178, 235);
+    }
+    .gwd-p-1811 {
+      position: absolute;
+      font-size: 100px;
+      font-weight: normal;
+      top: 75px;
+      font-family: Novacento;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-113px, -53px, 0px);
+    }
+    .gwd-line-1lns {
+      position: absolute;
+      height: 1px;
+      top: 218.5px;
+      stroke-width: 1px;
+      stroke: rgb(0, 0, 0);
+      left: 50%;
+      transform-style: preserve-3d;
+      width: 795px;
+      transform-origin: 50% 50% 0px;
+      transform: translate3d(-397px, -30px, 0px) scale3d(1, 2, 1);
+    }
+    .gwd-h2-r91a {
+      position: absolute;
+      top: 244px;
+      font-family: Novacento;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-212px, -70px, 0px);
+    }
+    .gwd-span-14tq {
+      font-weight: normal;
+      font-size: 36px;
+    }
+    .gwd-div-ukho {
+      pointer-events: none;
+      position: fixed;
+      left: 0px;
+      top: -30px;
+    }
+    .gwd-svg-i127 {
+      transform: translate3d(-397px, -60px, 0px) scale3d(1, 2, 1);
+    }
+    [data-gwd-group="StockholmLin"] .gwd-grp-dtcd.gwd-line-1lns {
+      position: absolute;
+      height: 1px;
+      top: 218.5px;
+      stroke-width: 1px;
+      stroke: rgb(0, 0, 0);
+      left: 50%;
+      transform-style: preserve-3d;
+      width: 795px;
+      transform-origin: 50% 50% 0px;
+      transform: translate3d(-397px, -30px, 0px) scale3d(1, 2, 1);
+    }
+    [data-gwd-group="StockholmLin"] .gwd-grp-dtcd.gwd-svg-pr5i {
+      transform: translate3d(-397px, 412px, 0px) scale3d(1, 2, 1);
+      top: -372.5px;
+    }
+    [data-gwd-group="StockholmLin"] .gwd-grp-dtcd.gwd-h3-16dz {
+      position: absolute;
+      font-family: Novacento;
+      font-size: 26px;
+      font-weight: normal;
+      left: 50%;
+      transform-style: preserve-3d;
+      transform: translate3d(-83px, 45px, 0px);
+      top: -45px;
+    }
+    [data-gwd-group="StockholmLin"] {
+      width: 955px;
+      height: 41px;
+    }
+    .gwd-div-txb2 {
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate3d(-477px, 0px, 0px);
+      transform-style: preserve-3d;
+    }
+  </style>
+  <link href="//cdn.shopify.com/s/files/1/0267/3855/7039/t/7/assets/app.css?v=3710687498789293362" rel="stylesheet" type="text/css" media="all">
+  <script>
+    class Cursor {
+      constructor(t) {
+        this.bindAll(this, ["resize", "move", "touch", "draw"]), this.colors = t.colors, this.D = document, this.W =
+          window, this.container = t.el, this.time = t.time, this.char = t.character, this.particles = [], this.init()
+      }
+      hasTouch() {
+        var t = "ontouchstart" in this.D,
+          s = navigator.msMaxTouchPoints && navigator.msMaxTouchPoints > 1,
+          i = !!this.W.navigator.msPointerEnabled;
+        return t || s || i
+      }
+      init() {
+        this.resize(), this.events(), this.draw()
+      }
+      events() {
+        this.W.addEventListener("resize", this.resize), this.hasTouch() ? (this.D.addEventListener("touchmove", this
+          .touch), this.D.addEventListener("touchstart", this.touch)) : this.D.addEventListener("mousemove", this
+          .move)
+      }
+      draw() {
+        requestAnimationFrame(this.draw), this.update()
+      }
+      resize() {
+        this.win = {
+          W: this.W.innerWidth,
+          H: this.W.innerHeight
+        }, this.cursor = {
+          x: this.win.W / 2,
+          y: this.win.W / 2
+        }
+      }
+      move(t) {
+        this.cursor.x = t.clientX, this.cursor.y = t.clientY, this.create(this.cursor.x, this.cursor.y, this.colors[
+          Math.floor(Math.random() * this.colors.length)])
+      }
+      touch(t) {
+        if (t.touches.length > 0)
+          for (var s = 0; s < t.touches.length; s++) this.create(t.touches[s].clientX, t.touches[s].clientY, this
+            .colors[Math.floor(Math.random() * this.colors.length)])
+      }
+      create(t, s, i) {
+        this.particle = new Particle(this.container, this.char, this.time), this.particle.init(t, s, i), this
+          .particles.push(this.particle)
+      }
+      update() {
+        for (var t = 0; t < this.particles.length; t++) this.particles[t].update();
+        for (t = this.particles.length - 1; t >= 0; t--) this.particles[t].time < 0 && (this.particles[t].destroy(),
+          this.particles.splice(t, 1))
+      }
+      bindAll(t, s) {
+        const i = s.length;
+        for (let e = 0; e < i; e++) t[s[e]] = t[s[e]].bind(t)
+      }
+    }
+
+    function styles(t, s) {
+      for (var i in s) t.style[i] = s[i]
+    }
+    class Particle {
+      constructor(t, s, i) {
+        this.char = s, this.time = i, this.container = t, this.styles = {}
+      }
+      init(t, s, i) {
+        this.velocity = {
+            x: (Math.random() < .5 ? -1 : 1) * (Math.random() / 2),
+            y: 1
+          }, this.pos = {
+            x: t - 10,
+            y: s - 20
+          }, this.styles.color = i, this.element = document.createElement("div"), this.element.textContent = this
+          .char, styles(this.element, this.styles), this.update(), document.getElementById(this.container).append(this
+            .element)
+      }
+      update() {
+        this.pos.x += this.velocity.x, this.pos.y += this.velocity.y, this.time--, this.element.style.transform =
+          "translate3d(" + this.pos.x + "px," + this.pos.y + "px, 0) scale(" + this.time / 120 + ")"
+      }
+      destroy() {
+        this.element.remove()
+      }
+    }
+    new Cursor({
+      el: "cursor",
+      time: 240,
+      character: "⋆",
+      colors: ["#F7CDFD", "#C4D5F2", "#FFFFFF"]
+    });
+  </script>
+  <script type="text/javascript" src="groups_runtime.min.1.0.js" gwd-groups-version="1.0"></script>
+</head>
+
+<body class="htmlNoPages">
+  <template id="gwd-group-definitions">
+    <div data-gwd-group-def="StockholmLin" data-gwd-group-class="gwd-grp-dtcd" style="display: none;">
+      <svg data-gwd-shape="line" preserveAspectRatio="none" viewBox="0 0 795 1" class="gwd-line-1lns gwd-svg-pr5i gwd-grp-dtcd">
+        <line x1="0" x2="795" y1="0.5" y2="0.5" class="gwd-grp-dtcd"></line>
+      </svg>
+      <h3 class="gwd-h3-16dz gwd-grp-dtcd">STOCKHOLM</h3></div>
+  </template>
+  <div id="cursor" class="gwd-div-ukho"></div>
+  <h2 class="gwd-h2-r91a"><span class="gwd-span-14tq">ETHICAL FINE JEWELRY</span><br></h2>
+  <svg data-gwd-shape="line" preserveAspectRatio="none" viewBox="0 0 795 1" class="gwd-line-1lns gwd-svg-i127">
+    <line x1="0" x2="795" y1="0.5" y2="0.5"></line>
+  </svg>
+  <h1 class="gwd-p-1811">RIEH</h1>
+  <div class="gwd-div-txb2" data-gwd-group="StockholmLin"></div>
+</body>
+
+</html>

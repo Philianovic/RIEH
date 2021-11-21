@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>ATELIER RIEH</title>
+  <meta name="generator" content="Google Web Designer 14.0.4.1108">
+  <style type="text/css" id="gwd-text-style">
+    @font-face {
+      font-family: Novacento;
+      src: url("assets/NovecentoWideNormal.otf") format("opentype");
+    }
+    p {
+      margin: 0px;
+    }
+    h2 {
+      margin: 0px;
+    }
+    h3 {
+      margin: 0px;
+    }
+  </style>
+  <style type="text/css" id="gwd-text-style">
+    @font-face {
+      font-family: NovacentoBold;
+      src: url("assets/Novecento-sans-wide-DemiBold.otf") format("opentype");
+    }
+    h1 {
+      margin: 0px;
+    }
+  </style>
+  <style type="text/css">
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    body {
+      transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+      transform-style: preserve-3d;
+      background-image: none;
+      background-color: rgb(225, 213, 250);
+    }
+    .gwd-div-ukho {
+      pointer-events: none;
+      position: fixed;
+      top: 57px;
+      left: 3px;
+    }
+    .gwd-p-n9sp {
+      position: absolute;
+      left: 50%;
+      transform-style: preserve-3d;
+      font-family: NOVACENTO;
+      top: 50%;
+      font-size: 18px;
+      transform: translate3d(-97px, -143px, 0px);
+    }
+    .gwd-p-1py2 {
+      transform: translate3d(-72px, 36px, 0px);
+    }
+    .gwd-p-fduc {
+      transform: translate3d(-96px, 21px, 0px);
+    }
+    .gwd-p-vhz4 {
+      font-size: 36px;
+      transform: translate3d(-223px, -16px, 0px);
+    }
+    .gwd-p-14v5 {
+      transform: translate3d(-104px, 25px, 0px);
+    }
+    .gwd-p-zoi8 {
+      font-family: NOVACENTObold;
+      font-size: 201px;
+      transform: translate3d(-223px, -246px, 0px);
+    }
+    .gwd-p-mt0f {
+      transform: translate3d(-72px, 42px, 0px);
+    }
+  </style>
+  <link href="//cdn.shopify.com/s/files/1/0267/3855/7039/t/7/assets/app.css?v=3710687498789293362" rel="stylesheet" type="text/css" media="all">
+  <script>
+    class Cursor {
+      constructor(t) {
+        this.bindAll(this, ["resize", "move", "touch", "draw"]), this.colors = t.colors, this.D = document, this.W =
+          window, this.container = t.el, this.time = t.time, this.char = t.character, this.particles = [], this.init()
+      }
+      hasTouch() {
+        var t = "ontouchstart" in this.D,
+          s = navigator.msMaxTouchPoints && navigator.msMaxTouchPoints > 1,
+          i = !!this.W.navigator.msPointerEnabled;
+        return t || s || i
+      }
+      init() {
+        this.resize(), this.events(), this.draw()
+      }
+      events() {
+        this.W.addEventListener("resize", this.resize), this.hasTouch() ? (this.D.addEventListener("touchmove", this
+          .touch), this.D.addEventListener("touchstart", this.touch)) : this.D.addEventListener("mousemove", this
+          .move)
+      }
+      draw() {
+        requestAnimationFrame(this.draw), this.update()
+      }
+      resize() {
+        this.win = {
+          W: this.W.innerWidth,
+          H: this.W.innerHeight
+        }, this.cursor = {
+          x: this.win.W / 2,
+          y: this.win.W / 2
+        }
+      }
+      move(t) {
+        this.cursor.x = t.clientX, this.cursor.y = t.clientY, this.create(this.cursor.x, this.cursor.y, this.colors[
+          Math.floor(Math.random() * this.colors.length)])
+      }
+      touch(t) {
+        if (t.touches.length > 0)
+          for (var s = 0; s < t.touches.length; s++) this.create(t.touches[s].clientX, t.touches[s].clientY, this
+            .colors[Math.floor(Math.random() * this.colors.length)])
+      }
+      create(t, s, i) {
+        this.particle = new Particle(this.container, this.char, this.time), this.particle.init(t, s, i), this
+          .particles.push(this.particle)
+      }
+      update() {
+        for (var t = 0; t < this.particles.length; t++) this.particles[t].update();
+        for (t = this.particles.length - 1; t >= 0; t--) this.particles[t].time < 0 && (this.particles[t].destroy(),
+          this.particles.splice(t, 1))
+      }
+      bindAll(t, s) {
+        const i = s.length;
+        for (let e = 0; e < i; e++) t[s[e]] = t[s[e]].bind(t)
+      }
+    }
+
+    function styles(t, s) {
+      for (var i in s) t.style[i] = s[i]
+    }
+    class Particle {
+      constructor(t, s, i) {
+        this.char = s, this.time = i, this.container = t, this.styles = {}
+      }
+      init(t, s, i) {
+        this.velocity = {
+            x: (Math.random() < .5 ? -1 : 1) * (Math.random() / 2),
+            y: 1
+          }, this.pos = {
+            x: t - 10,
+            y: s - 20
+          }, this.styles.color = i, this.element = document.createElement("div"), this.element.textContent = this
+          .char, styles(this.element, this.styles), this.update(), document.getElementById(this.container).append(this
+            .element)
+      }
+      update() {
+        this.pos.x += this.velocity.x, this.pos.y += this.velocity.y, this.time--, this.element.style.transform =
+          "translate3d(" + this.pos.x + "px," + this.pos.y + "px, 0) scale(" + this.time / 120 + ")"
+      }
+      destroy() {
+        this.element.remove()
+      }
+    }
+    new Cursor({
+      el: "cursor",
+      time: 100,
+      character: "✦",
+      colors: ["#F7CDFD", "#C4D5F2", "#FFFFFF"]
+    });
+  </script>
+</head>
+
+<body class="htmlNoPages">
+  <div id="cursor" class="gwd-div-ukho"></div>
+  <p class="gwd-p-n9sp gwd-p-fduc gwd-p-14v5">Isabella@rieh.land</p>
+  <p class="gwd-p-n9sp gwd-p-fduc gwd-p-vhz4">&nbsp;Ethical Fine Jewelry</p>
+  <p class="gwd-p-n9sp gwd-p-1py2 gwd-p-mt0f">+46701234567</p>
+  <p class="gwd-p-n9sp gwd-p-1py2 gwd-p-zoi8">RIEH</p>
+</body>
+
+</html>
